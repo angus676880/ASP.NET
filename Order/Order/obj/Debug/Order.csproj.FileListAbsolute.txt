@@ -55,3 +55,16 @@ D:\ASPNET\Order\Order\bin\EntityFramework.SqlServer.dll
 D:\ASPNET\Order\Order\bin\EntityFramework.xml
 D:\ASPNET\Order\Order\bin\EntityFramework.SqlServer.xml
 D:\ASPNET\Order\Order\bin\zh-Hant\EntityFramework.resources.dll
+D:\ASPNET\Order\Order\bin\AutoMapper.dll
+D:\ASPNET\Order\Order\bin\Newtonsoft.Json.dll
+D:\ASPNET\Order\Order\bin\System.Linq.Dynamic.Core.dll
+D:\ASPNET\Order\Order\bin\System.Net.Http.Formatting.dll
+D:\ASPNET\Order\Order\bin\System.Web.Http.dll
+D:\ASPNET\Order\Order\bin\AutoMapper.xml
+D:\ASPNET\Order\Order\bin\Newtonsoft.Json.xml
+D:\ASPNET\Order\Order\bin\System.Linq.Dynamic.Core.xml
+D:\ASPNET\Order\Order\bin\System.Net.Http.Formatting.xml
+D:\ASPNET\Order\Order\bin\System.Web.Http.xml
+D:\ASPNET\Order\Order\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+D:\ASPNET\Order\Order\bin\LinqKit.dll
+D:\ASPNET\Order\Order\bin\LinqKit.xml
