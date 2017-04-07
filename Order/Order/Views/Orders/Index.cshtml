@@ -13,6 +13,7 @@
 @using (Html.BeginForm("Index", "Orders", FormMethod.Get))
 {
     <p>
+        訂單編號: @Html.TextBox("orderId", ViewBag.orderId as string)
         客戶名稱: @Html.TextBox("companyName", ViewBag.companyName as string)
         <input type="submit" value="Search" />
     </p>
@@ -21,7 +22,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.CustomerID)
+            @Html.DisplayNameFor(model => model.OrderID)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Customers.CompanyName)
@@ -38,7 +39,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.CustomerID)
+            @Html.DisplayFor(modelItem => item.OrderID)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Customers.CompanyName)

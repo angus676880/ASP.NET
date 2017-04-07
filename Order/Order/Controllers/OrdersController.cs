@@ -16,11 +16,16 @@ namespace Order.Controllers
         private TSQL2012Entities db = new TSQL2012Entities();
 
         // GET: Orders
-        public ActionResult Index(string companyName)
+        public ActionResult Index(string orderID,string companyName)
         {
             IQueryable<Orders> orders = db.Orders;
 
             var pred = PredicateBuilder.True<Orders>();
+
+            if (!String.IsNullOrEmpty(orderID))
+            {
+                pred = pred.And(x => x.OrderID.ToString().Equals(orderID));
+            }
 
             if (!String.IsNullOrEmpty(companyName))
             {
