@@ -11,7 +11,8 @@ namespace Order.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Employees
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -24,6 +25,8 @@ namespace Order.Models
         public int EmployeeID { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
+        [Display(Name = "負責員工")]
+        public string FullName { get { return string.Format("{0} {1}", FirstName, LastName); } }
         public string Title { get; set; }
         public string TitleOfCourtesy { get; set; }
         public System.DateTime BirthDate { get; set; }

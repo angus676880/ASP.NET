@@ -9,123 +9,221 @@
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Orders</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.CustomerID, "CustomerID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerID)
+            </th>
+            <td>
                 @Html.DropDownList("CustomerID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.CustomerID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.EmployeeID, "EmployeeID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+                @Html.ValidationMessageFor(model => model.CustomerID, "", new { @class = "text-danger" })                
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeID)
+            </th>
+            <td>
                 @Html.DropDownList("EmployeeID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.EmployeeID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.OrderDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.OrderDate, new { htmlAttributes = new { @class = "form-control" } })
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderDate)
+            </th>
+            <td>
+                @Html.EditorFor(model => model.OrderDate, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
                 @Html.ValidationMessageFor(model => model.OrderDate, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.RequiredDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.RequiredDate, new { htmlAttributes = new { @class = "form-control" } })
+            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.RequiredDate)
+            </th>
+            <td>
+                @Html.EditorFor(model => model.RequiredDate, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
                 @Html.ValidationMessageFor(model => model.RequiredDate, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ShippedDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ShippedDate, new { htmlAttributes = new { @class = "form-control" } })
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ShippedDate)
+            </th>
+            <td>
+                @Html.EditorFor(model => model.ShippedDate, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
                 @Html.ValidationMessageFor(model => model.ShippedDate, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ShipperID, "ShipperID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ShipperID)
+            </th>
+            <td>
                 @Html.DropDownList("ShipperID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ShipperID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Freight, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Freight, new { htmlAttributes = new { @class = "form-control" } })
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Freight)
+            </th>
+            <td>
+                @Html.EditorFor(model => model.Freight, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Freight, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ShipName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ShipName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ShipName, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ShipAddress, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ShipAddress, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ShipAddress, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ShipCity, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ShipCity, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ShipCity, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ShipRegion, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ShipRegion, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ShipRegion, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ShipPostalCode, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ShipPostalCode, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ShipPostalCode, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ShipCountry, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ShipCountry, new { htmlAttributes = new { @class = "form-control" } })
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ShipCountry)
+            </th>
+            <td>
+                @Html.EditorFor(model => model.ShipCountry, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ShipCountry, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
+            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.ShipCity)
+            </th>
+            <td>
+                @Html.EditorFor(model => model.ShipCity, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ShipCity, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ShipRegion)
+            </th>
+            <td>
+                @Html.EditorFor(model => model.ShipRegion, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ShipRegion, "", new { @class = "text-danger" })
+            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.ShipPostalCode)
+            </th>
+            <td>
+                @Html.EditorFor(model => model.ShipPostalCode, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ShipPostalCode, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ShipRegion)
+            </th>
+            <td>
+                @Html.EditorFor(model => model.ShipRegion, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ShipRegion, "", new { @class = "text-danger" })
+            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.ShipPostalCode)
+            </th>
+            <td>
+                @Html.EditorFor(model => model.ShipPostalCode, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ShipPostalCode, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ShipAddress)
+            </th>
+            <td>
+                @Html.EditorFor(model => model.ShipAddress, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ShipAddress, "", new { @class = "text-danger" })
+            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.ShipName)
+            </th>
+            <td>
+                @Html.EditorFor(model => model.ShipName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ShipName, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <th>訂單金額總計</th>
+            <td id="total" colspan="4"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="4">
+                <input type="submit" value="存檔"  />
+                <input type="button" onclick="location.href='./Index';" value="回前一頁" />
+            </td>
+        </tr>
+    </table>
+    <a onclick="AddNewDetail()" href="#">新增一筆</a>
+        <table class="table table-bordered">
+            <tr>
+                <td>商品</td>
+                <td>單價</td>
+                <td>數量</td>
+                <td>小計</td>
+                <td></td>
+            </tr>
+            <tbody id="detailContent">
+                    <tr>
+                        <td>@Html.DropDownList("productName", null , new  { @id = "DropdowmListProduct", @class = "ProductID", @onchange = "GetPrice(this)" })</td>
+                        <td>@Html.TextBoxFor(model => model.OrderDetails2.UnitPrice, new { @class = "UnitPrice", @id = "UnitPrice", onchange = "ChangePrice(this)" })</td>
+                        <td>@Html.TextBoxFor(model => Model.OrderDetails2.Qty, new { @class = "Qty", onchange = "Count(this)" })</td>
+                        <td id="count"><input type="text"></td>
+                        <td><button type="button" class="btnRemove">取消</button></td>
+                    </tr>
+            </tbody>
+        </table>
 }
+<script>
+    function AddNewDetail() {
+        //明細資料範本
+        var trtemplate = $('#detailContent tr').eq(0).html();
+        //新增一列名資料
+        $('#detailContent').append('<tr>' + trtemplate + '</tr>');
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+        //移除TR
+        $('#detailContent').on('click', '.btnRemove', function () {
+            $(this).closest('tr').remove();
+        });
+
+        for (var i = 0 ; i < $('#detailContent tr').length; i++) {
+            $('.ProductID').eq(i).attr('name', 'OrderDetails[' + i + '].ProductID');
+        }
+    }
+
+
+    function GetPrice(item) 
+    {
+        var uniPrice = @Html.Raw(Json.Encode(ViewBag.unitPrice));
+        var proName = @Html.Raw(Json.Encode(ViewBag.proName));
+       
+        for (var i = 0;i<proName.length;i++){
+            if(item.value==proName[i]){
+                $(item).parent().next('td').children().val(uniPrice[i]);
+                break;
+            }
+        }     
+    }
+
+    function Count(item){
+        var unitprice = $(item).parent().prev('td').children().val();
+        var qty = $(item).closest("input:text").val();
+        var count = unitprice * qty;
+        $(item).parent().next('td').children().val(count);
+        Total(count);
+    }
+
+    function ChangePrice(item){
+        var unitprice = $(item).closest("input:text").val();
+        var qty = $(item).parent().next('td').children().val();
+        var total = unitprice * qty;
+
+        $(item).parent().next('td').next('td').children().val(total);
+    }
+
+    function Total(count){
+        var countArray = [];
+        var total = 0;
+        for(var i=0;i<$('#detailContent tr').length;i++){
+            countArray[i] = count;
+            total += countArray[i];
+        }
+
+        document.getElementById("total").innerHTML = total;
+    }
+
+</script>
+

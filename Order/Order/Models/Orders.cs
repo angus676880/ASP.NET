@@ -11,7 +11,8 @@ namespace Order.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Orders
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,26 +20,46 @@ namespace Order.Models
         {
             this.OrderDetails = new HashSet<OrderDetails>();
         }
-    
+
+        [Display(Name = "訂單編號")]
         public int OrderID { get; set; }
+        [Required]
+        [Display(Name = "客戶名稱")]
         public Nullable<int> CustomerID { get; set; }
+        [Display(Name = "負責員工名稱")]
         public int EmployeeID { get; set; }
+        [Display(Name = "訂購日期")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public System.DateTime OrderDate { get; set; }
+        [Display(Name = "需要日期")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public System.DateTime RequiredDate { get; set; }
+        [Display(Name = "出貨日期")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> ShippedDate { get; set; }
+        [Display(Name = "出貨公司名稱")]
         public int ShipperID { get; set; }
+        [Display(Name = "運費")]
         public decimal Freight { get; set; }
+        [Display(Name = "出貨說明")]
         public string ShipName { get; set; }
+        [Display(Name = "出貨地址")]
         public string ShipAddress { get; set; }
+        [Display(Name = "出貨城市")]
         public string ShipCity { get; set; }
+        [Display(Name = "出貨地區")]
         public string ShipRegion { get; set; }
+        [Display(Name = "郵遞區號")]
         public string ShipPostalCode { get; set; }
+        [Display(Name = "出貨國家")]
         public string ShipCountry { get; set; }
     
         public virtual Employees Employees { get; set; }
         public virtual Customers Customers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderDetails> OrderDetails { get; set; }
+        public virtual OrderDetails OrderDetails2 { get; set; }
+
         public virtual Shippers Shippers { get; set; }
     }
 }
